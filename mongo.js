@@ -12,12 +12,12 @@ const url = `mongodb+srv://harryhung:${password}@fso-cluster.s5hqvbb.mongodb.net
 mongoose.set('strictQuery',false)
 mongoose.connect(url)
 
-const phonebookSchema = new mongoose.Schema({
+const personSchema = new mongoose.Schema({
     name: String,
     number: String,
 })
 
-const Person = mongoose.model('Person', phonebookSchema)
+const Person = mongoose.model('Person', personSchema)
 
 if (process.argv.length === 3) {
     Person.find({}).then(result => {
